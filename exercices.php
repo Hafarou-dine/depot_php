@@ -86,11 +86,14 @@
         -Afficher le prix HT, le nbr d’articles et le taux de TVA (utilisez la fonction echo),
         -Afficher le résultat (utilisez la fonction echo). */
         echo "<strong>Exercice 4</strong><br>";
+
         function calculerPrix($prixArticle, $nbArticles, $tva){
             echo "prixArticle = $prixArticle<br> nbrArticles = $nbArticles<br> tva = $tva<br>";
-            $prixttc = ($prixArticle * $nbArticles) + ($prixArticle * $tva / 100);
-            return $prixttc;
+            // $prixttc = ($prixArticle * $nbArticles) + (($prixArticle * $nbArticles) * $tva / 100);
+            $prixttc = $prixArticle * $nbArticles * (1 + ($tva / 100));
+            return "Le prix TTC est de : $prixttc";
         }
+
         echo calculerPrix(10, 2, 20);
 
 
@@ -102,6 +105,7 @@
     ?>    
 </body>
 </html>
+
 
 <!-- exercices.php -->
 
