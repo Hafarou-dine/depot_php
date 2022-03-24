@@ -15,7 +15,7 @@
 
         /* -------------------- L'affichage -------------------- */
         echo "Hello World ";
-        // le <br> pour sauter de ligne
+        // Le <br> pour sauter de ligne
         echo "<br>";
 
 
@@ -34,8 +34,19 @@
         echo "Mon prenom : {$prenom}<br>";
 
 
+        /* -------------------- Les fonctions -------------------- */
+        // Declaration de la fonction
+        function addition($a,$b){
+            /* $total = $a+$b;
+            return $total; */
+            return $a+$b;
+        }
+        // Appel de la fonction 
+        echo addition(17,23);
 
-        
+
+
+
     ?>
 </body>
 </html>

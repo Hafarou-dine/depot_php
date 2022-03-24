@@ -92,12 +92,25 @@
             return $prixttc;
         }
         echo calculerPrix(10, 2, 20);
+
+
+
+
+
         
+
     ?>    
 </body>
 </html>
 
 <!-- exercices.php -->
+
+
+
+
+
+
+
 
 
 
