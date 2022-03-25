@@ -365,6 +365,7 @@
         suivants. Par exemple, si la valeur de nbr équivaut à : 17, la fonction affichera les nombres de 18 à 27 (méthode echo). */
         echo "<strong>Exercice 2</strong><br>";
         function dixSuivannts($nombre){
+            echo "Les dix nombres suivant $nombre sont:<br>";
             for($i=$nombre+1; $i<=$nombre+10; $i++){
                 echo "$i<br>";
             }
@@ -373,6 +374,8 @@
         echo "<br>";
         dixSuivannts(500);
         echo "<br><br>";
+
+        
 
 
             
