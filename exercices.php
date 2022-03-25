@@ -135,7 +135,8 @@
         -Cela doit donner :
         <p>bonjour l’adrar</p> */
         echo "<strong>Exercice 3</strong><br>";
-        echo "<br><br>";
+        $a = "bounjour ";
+        echo "<p>{$a}l'adrar</p>";
 
 
         /* -------------------- Les fonctions -------------------- */
@@ -158,8 +159,12 @@
         - la fonction doit renvoyer l’arrondi (return) du nombre en entrée. */
         echo "<strong>Exercice 2</strong><br>";
         function arrondir($floatNum){
-
+            $res = round($floatNum);
+            return "L'arrondi de $floatNum est : $res";
         }
+        echo arrondir(3.4);
+        echo "<br>";
+        echo arrondir(4.6);
         echo "<br><br>";
 
         /* Exercice 3 :
@@ -368,9 +373,9 @@
         echo "<br>";
         dixSuivannts(500);
         echo "<br><br>";
-        
 
 
+            
 
     ?>    
 </body>
@@ -381,13 +386,4 @@
     exercices.php 
     --------------------
 -->
-
-
-
-
-
-
-
-
-
 
