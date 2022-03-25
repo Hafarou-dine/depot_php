@@ -32,6 +32,7 @@
         echo "<br><br>";
 
 
+
         /* -------------------- Les operateurs -------------------- */
         echo "<br><strong>Les operateurs</strong><br>";
         /* Exercice 1 :
@@ -99,6 +100,7 @@
         echo "<br><br>";
 
 
+
         /* -------------------- La concatenation -------------------- */
         echo "<br><strong>La concatenation</strong><br>";
         /*  Exercice 1 :
@@ -137,6 +139,7 @@
         echo "<strong>Exercice 3</strong><br>";
         $a = "bounjour ";
         echo "<p>{$a}l'adrar</p>";
+
 
 
         /* -------------------- Les fonctions -------------------- */
@@ -190,6 +193,7 @@
         echo "<br>";
         echo moyenneDesTrois(17, 12, 13);
         echo "<br><br>";
+
 
 
         /* -------------------- Les conditions -------------------- */
@@ -350,6 +354,7 @@
         echo "<br><br>";
 
 
+
         /* -------------------- Les boucles -------------------- */
         echo "<br><strong>Les boucles</strong><br>";
         /* Exercice 1 :
@@ -394,7 +399,110 @@
             $tab[$i] = rand(10, 30);
         }
         var_dump($tab);
-        
+        echo "<br><br>";
+
+        /* -------------------- Les tableaux -------------------- */
+        echo "<br><strong>Les tableaux</strong><br>";
+        // tableau qui va servir pour tester les fonctions
+        $tab = array(10, 12, 15, 3, 21, 25, 38, 18, 19, 20, 23, 24);
+        $tabBis = array(10, 25, 6, 33, 58, 1, 49, 110);
+        /* Exercice 1 :
+        -Créer une fonction qui affiche la valeur la plus grande du tableau. */
+        echo "<strong>Exercice 1</strong><br>";
+        function plusGrandTab($tab){
+            $len = count($tab);
+            // cas general
+            if($len > 0){
+                $max = $tab[0];
+                for($i=1; $i<$len; $i++){
+                    if($tab[$i] > $max){
+                        $max = $tab[$i];
+                    }
+                }
+                // Affichage du resultat
+                echo "Le maximum dans [";
+                for($i=0; $i<$len-1; $i++){
+                    echo "$tab[$i], ";
+                }
+                echo "{$tab[$len-1]}] ";
+                echo "est : $max"; 
+            }
+            // cas d'erreur tableau vide
+            else{
+                echo "Impossible de calculer le maximum sur un tableau vide";
+            }
+            
+        }
+        plusGrandTab($tab);
+        echo "<br>";
+        plusGrandTab($tabBis);
+        echo "<br><br>";
+
+
+        /* Exercice 2 :
+        -Créer une fonction qui affiche la moyenne du tableau. */
+        echo "<strong>Exercice 2</strong><br>";
+        function moyenneTab($tab){
+            $len = count($tab);
+            // cas general 
+            if($len > 0){
+                $somme = 0;
+                foreach($tab as $value){
+                    $somme += $value;
+                }
+                $moy = $somme / $len;
+                // Affichage du resultat
+                echo "La moyenne de [";
+                for($i=0; $i<$len-1; $i++){
+                    echo "$tab[$i], ";
+                }
+                echo "{$tab[$len-1]}] ";
+                echo "est : $moy"; 
+            }
+            // cas d'erreur tableau vide
+            else{
+                echo "Impossible de calculer la moyenne sur un tableau vide";
+            }
+            
+        }
+        moyenneTab($tab);
+        echo "<br>";
+        moyenneTab($tabBis);
+        echo "<br><br>";
+
+
+        /* Exercice 3 :
+        -Créer une fonction qui affiche la valeur la plus petite du tableau. */
+        echo "<strong>Exercice 3</strong><br>";
+        function plusPetitTab($tab){
+            $len = count($tab);
+            // cas general
+            if($len > 0){
+                $min = $tab[0];
+                for($i=1; $i<$len; $i++){
+                    if($tab[$i] < $min){
+                        $min = $tab[$i];
+                    }
+                }
+                // Affichage du resultat
+                echo "Le mninimum dans [";
+                for($i=0; $i<$len-1; $i++){
+                    echo "$tab[$i], ";
+                }
+                echo "{$tab[$len-1]}] ";
+                echo "est : $min";
+            }
+            // cas d'erreur tableau vide
+            else{
+                echo "Impossible de calculer le minimum sur un tableau vide";
+            }
+        }
+        plusPetitTab($tab);
+        echo "<br>";
+        plusPetitTab($tabBis);
+        echo "<br><br>";
+
+
 
     ?>    
 </body>
