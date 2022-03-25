@@ -373,12 +373,28 @@
         dixSuivannts(10);
         echo "<br>";
         dixSuivannts(500);
+        echo "<br>";
+
+
+        /* Exercice Bonus 1 :
+        Exercice créer un tableau de 10 colonnes (en utilisant un boucle) -> chaque colonne la valeur de l'index +1 */
+        echo "<strong>Exercice Bonus 1</strong><br>";
+        $tab = array();
+        for($i=0; $i<10; $i++){
+            $tab[$i] = $i+1;
+        }
+        var_dump($tab);
         echo "<br><br>";
-
-        
-
-
             
+        /* Exercice Bonus 2 :
+        créer un tableau de 10 colonne avec un nombre aléatoire comprit entre (10, 30). */
+        echo "<strong>Exercice Bonus 2</strong><br>";
+        $tab = array();
+        for($i=0; $i<10; $i++){
+            $tab[$i] = rand(10, 30);
+        }
+        var_dump($tab);
+        
 
     ?>    
 </body>
