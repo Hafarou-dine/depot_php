@@ -33,7 +33,7 @@
 
 
         /* -------------------- Les operateurs -------------------- */
-        echo "<strong>Les operateurs</strong><br>";
+        echo "<br><strong>Les operateurs</strong><br>";
         /* Exercice 1 :
         -Créer 2 variables $a et $b qui ont pour valeur 12 et 10,
         -Stocker le résultat de l’addition de $a et $b dans une variable $total,
@@ -44,6 +44,7 @@
         $total = $a + $b;
         echo "$a + $b = $total";
         echo "<br><br>";
+
 
         /* Exercice 2 :
         -Créer 3 variables $a, $b et $c qui ont pour valeur $a =5, $b =3 et $c = $a+$b,
@@ -89,23 +90,297 @@
         function calculerPrix($prixArticle, $nbArticles, $tva){
             echo "prixArticle = $prixArticle<br> nbrArticles = $nbArticles<br> tva = $tva<br>";
             // $prixttc = ($prixArticle * $nbArticles) + (($prixArticle * $nbArticles) * $tva / 100);
+            /* $total = $prixArticle * $nbArticles;
+            $prixttc = $total + $total * $tva / 100; */
             $prixttc = $prixArticle * $nbArticles * (1 + ($tva / 100));
             return "Le prix TTC est de : $prixttc";
         }
         echo calculerPrix(10, 2, 20);
+        echo "<br><br>";
 
 
+        /* -------------------- La concatenation -------------------- */
+        echo "<br><strong>La concatenation</strong><br>";
+        /*  Exercice 1 :
+        -Créer une variable $a qui a pour valeur « bonjour »,
+        -Afficher le nom de la variable et sa valeur. */
+        echo "<strong>Exercice 1</strong><br>";
+        $a = "bonjour";
+        echo "\$a : $a";
+        echo"<br><br>";
 
 
+        /* Exercice 2 :
+        -Créer 1 variable $a qui a pour valeur « bon »,
+        -Créer 1 variable $b qui a pour valeur « jour »,
+        -Créer 1 variable $c qui a pour valeur 10,
+        -Concaténer $a, $b et $c +1,
+        -Afficher le résultat de la concaténation. */
+        echo "<strong>Exercice 2</strong><br>";
+        $a = "bon";
+        $b = "jour";
+        $c = 10;
+        $c1 = $c + 1;
+        $concat = "$a$b$c1";
+        // $concatBis = "{$a}{$b}{$c1}";
+        echo $concat;
+        // echo "<br>";
+        // echo $concatBis;
+        echo"<br><br>";
 
+        /* Exercice 3 :
+        -Créer une variable $a qui a pour valeur $bonjour,
+        -Afficher un paragraphe (balise html) et à l’intérieur les mots suivants :l’adrar,
+        -Ajouter la variable $a avant la phase dans le paragraphe,
+        -Cela doit donner :
+        <p>bonjour l’adrar</p> */
+        echo "<strong>Exercice 3</strong><br>";
+        echo "<br><br>";
+
+
+        /* -------------------- Les fonctions -------------------- */
+        echo "<br><strong>Les fonctions</strong><br>";
+        /* Exercice 1 :
+        -Créer une fonction qui soustrait à $a la variable $b (2 paramètres en entrée),
+        -la fonction doit renvoyer le résultat de la soustraction $a-$b (return). */
+        echo "<strong>Exercice 1</strong><br>";
+        function soustraire($a, $b){
+            $res = $a - $b;
+            return "$a - $b = $res";
+        }
+        echo soustraire(101, 1);
+        echo "<br>";
+        echo soustraire(100, 20);
+        echo "<br><br>";
+
+        /* Exercice 2 :
+        -Créer une fonction qui prend en entrée un nombre à virgule (float),
+        - la fonction doit renvoyer l’arrondi (return) du nombre en entrée. */
+        echo "<strong>Exercice 2</strong><br>";
+        function arrondir($floatNum){
+
+        }
+        echo "<br><br>";
+
+        /* Exercice 3 :
+        -Créer une fonction qui prend en entrée 3 valeurs et renvoie la somme des 3 valeurs. */
+        echo "<strong>Exercice 3</strong><br>";
+        function sommeDesTrois($x, $y, $z){
+            $res = $x + $y + $z;
+            return "$x + $y +$z = $res";
+        }
+        echo sommeDesTrois(1, 2, 3);
+        echo "<br>";
+        echo sommeDesTrois(5, 5, 5);
+        echo "<br><br>";
+
+        /* Exercice 4 :
+        -Créer une fonction qui prend en entrée 3 valeurs et retourne la valeur moyenne des 3 valeurs (saisies en paramètre). */
+        echo "<strong>Exercice 4</strong><br>";
+        function moyenneDesTrois($x, $y, $z){
+            $res = ($x+$y+$z)/3;
+            return "La moyenne de $x, $y et $z est : $res";
+        }
+        echo moyenneDesTrois(5, 5, 5);
+        echo "<br>";
+        echo moyenneDesTrois(17, 12, 13);
+        echo "<br><br>";
+
+
+        /* -------------------- Les conditions -------------------- */
+        echo "<br><strong>Les conditions</strong><br>";
+        /* Exercice 1 :
+        -Créer une fonction qui teste si un nombre est positif ou négatif (echo dans la page web). */
+        echo "<strong>Exercice 1</strong><br>";
+        function testPositif($nombre){
+            if($nombre > 0){
+                echo "$nombre est positif";
+            }
+            else if($nombre == 0){
+                echo "$nombre est egale à 0";
+            }
+            else{
+                echo "$nombre est negatif";
+            }
+        }
+        echo testPositif(12);
+        echo "<br>";
+        echo testPositif(0);
+        echo "<br>";
+        echo testPositif(-12);
+        echo "<br><br>";
+
+
+        /* Exercice 2 :
+        -Créer une fonction qui prend en entrée 3 valeurs et retourne le nombre le plus grand (echo dans la page web). */
+        echo "<strong>Exercice 2</strong><br>";
+        function plusGrand($nombre1, $nombre2, $nombre3){
+            if($nombre1 >= $nombre2){
+                if($nombre1 > $nombre3){
+                    $maxi = $nombre1;
+                }
+                else{
+                    $maxi = $nombre3;
+                }
+            }
+            else if($nombre2 > $nombre3){
+                $maxi = $nombre2;
+            }
+            else{
+                $maxi = $nombre3;
+            }
+            return "Le plus grand nombre entre $nombre1, $nombre2 et $nombre3 est $maxi";
+        }
+        echo plusGrand(10, 5, 2);
+        echo "<br>";
+        echo plusGrand(10, 10, 12);
+        echo "<br>";
+        echo plusGrand(10, 20, 12);
+        echo "<br><br>";
+
+
+        /* Exercice 3 :
+        -Créer une fonction qui prend en entrée 3 valeurs et retourne le nombre le plus petit (echo dans la page web). */
+        echo "<strong>Exercice 3</strong><br>";
+        function plusPetit($nombre1, $nombre2, $nombre3){
+            if($nombre1 <= $nombre2){
+                if($nombre1 < $nombre3){
+                    $maxi = $nombre1;
+                }
+                else{
+                    $maxi = $nombre3;
+                }
+            }
+            else if($nombre2 < $nombre3){
+                $maxi = $nombre2;
+            }
+            else{
+                $maxi = $nombre3;
+            }
+            return "Le plus petit nombre entre $nombre1, $nombre2 et $nombre3 est $maxi";
+        }
+        echo plusPetit(10, 5, 2);
+        echo "<br>";
+        echo plusPetit(10, 5, 12);
+        echo "<br>";
+        echo plusPetit(10, 20, 12);
+        echo "<br><br>";
+
+
+        /* Exercice 4:
+        -Créer une fonction qui prend en entrée 1 valeur (l’âge d’un enfant). Ensuite, elle informe de sa catégorie (echo dans
+        la page web) :
+        x "Poussin" de 6 à 7 ans
+        x "Pupille" de 8 à 9 ans
+        x "Minime" de 10 à 11 ans
+        x "Cadet" après 12 ans
+        Bonus : Refaire l’exercice en utilisant le switch case.*/
+        echo "<strong>Exercice 4</strong><br>";
+        // Vesrion de la focntion avec les if 
+        function categorieEnfantif($age){
+            if($age>=12){
+                echo "L'enfant est dans la categogie: Cadet";
+            }
+            elseif($age>=10 && $age<=11){
+                echo "L'enfant est dans la categogie: Minime";
+            }
+            elseif($age>=8 && $age<=9){
+                echo "L'enfant est dans la categogie: Pupille";
+            }
+            elseif($age>=6 && $age<=7){
+                echo "L'enfant est dans la categogie: Poussin";
+            }
+            else{
+                echo "L'enfant n'est dans aucune categogie";
+            }
+        }
+
+        // vesrsion de la fonction avec switch case
+        function categorieEnfantSwitch($age){
+            switch($age){
+                case($age>=12):
+                    echo "L'enfant est dans la categogie: Cadet";
+                    break;
+                
+                case($age>=10 && $age<=11):
+                    echo "L'enfant est dans la categogie: Minime";
+                    break;
+
+                case($age>=8 && $age<=9):
+                    echo "L'enfant est dans la categogie: Pupille";
+                    break;
+
+                case($age>=6 && $age<=7):
+                    echo "L'enfant est dans la categogie: Poussin";
+                    break;
+                
+                default:
+                    echo "L'enfant n'est dans aucune categogie";
+                    break;
+            }
+        }
+
+        // Tests
+        echo "--------------------------- Test de la version avec les if ---------------------------<br>";
+        categorieEnfantif(14);
+        echo "<br>";
+        categorieEnfantif(11);
+        echo "<br>";
+        categorieEnfantif(8);
+        echo "<br>";
+        categorieEnfantif(6);
+        echo "<br>";
+        categorieEnfantif(5);
+        echo "<br><br>";
+        echo "--------------------------- Test de la version avec le switch ---------------------------<br>";
+        categorieEnfantSwitch(14);
+        echo "<br>";
+        categorieEnfantSwitch(11);
+        echo "<br>";
+        categorieEnfantSwitch(8);
+        echo "<br>";
+        categorieEnfantSwitch(6);
+        echo "<br>";
+        categorieEnfantSwitch(5);
+        echo "<br><br>";
+
+
+        /* -------------------- Les boucles -------------------- */
+        echo "<br><strong>Les boucles</strong><br>";
+        /* Exercice 1 :
+        Créer un script qui affiche les nombres de 1 -> 5 (méthode echo). */
+        echo "<strong>Exercice 1</strong><br>";
+        for($i=1; $i<=5; $i++){
+            echo "$i<br>";
+        }
+        echo "<br>";
+
+        /* Exercice 2 :
+        Ecrire une fonction qui prend un nombre en paramètre (variable $nbr), et qui ensuite affiche les dix nombres
+        suivants. Par exemple, si la valeur de nbr équivaut à : 17, la fonction affichera les nombres de 18 à 27 (méthode echo). */
+        echo "<strong>Exercice 2</strong><br>";
+        function dixSuivannts($nombre){
+            for($i=$nombre+1; $i<=$nombre+10; $i++){
+                echo "$i<br>";
+            }
+        }
+        dixSuivannts(10);
+        echo "<br>";
+        dixSuivannts(500);
+        echo "<br><br>";
         
+
+
 
     ?>    
 </body>
 </html>
 
 
-<!-- exercices.php -->
+<!-- 
+    exercices.php 
+    --------------------
+-->
 
 
 
