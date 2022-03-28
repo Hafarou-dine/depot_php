@@ -21,7 +21,7 @@
         <input type="text" name="nbr1"><br>
         <p>Nombre 2 :</p>
         <input type="text" name="nbr2"><br><br>
-        <button type="submit">Envoyer</button><br><br>
+        <button type="submit">Calculer</button><br><br>
 
     </form>
 

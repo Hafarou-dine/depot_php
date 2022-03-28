@@ -26,7 +26,7 @@
         <input type="text" name="quantite"><br>
         <p>Taux TVA :</p>
         <input type="text" name="tva"><br><br>
-        <button type="submit">Envoyer</button><br><br>
+        <button type="submit">Calculer</button><br><br>
     </form>
     
     <?php 

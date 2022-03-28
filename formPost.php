@@ -23,7 +23,7 @@
                 Autre
             </option>   
         </select>
-        <p><input type="submit" value="Afficher"></p>
+        <p><input type="submit" value="Envoyer"></p>
     </form><br>
 
     <?php 
