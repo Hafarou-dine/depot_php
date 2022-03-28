@@ -44,11 +44,7 @@
         // Appel de la fonction 
         echo addition(17,23);
 
-
-
-
     ?>
 </body>
 </html>
-
 

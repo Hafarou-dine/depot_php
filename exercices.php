@@ -502,15 +502,7 @@
         plusPetitTab($tabBis);
         echo "<br><br>";
 
-
-
     ?>    
 </body>
 </html>
-
-
-<!-- 
-    exercices.php 
-    --------------------
--->
 

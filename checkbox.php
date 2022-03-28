@@ -30,6 +30,7 @@
         else{
             echo "<p>Veuillez cocher une ou plusieurs checkbox</p>";
         }
+        
     ?>
 </body>
 </html>
