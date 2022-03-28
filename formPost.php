@@ -41,7 +41,7 @@
                 case 2:
                     echo "un Homme";
                     break;
-                default:
+                case 3:
                     echo "du genre Autre";
                     break;
             }
