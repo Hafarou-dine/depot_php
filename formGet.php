@@ -33,7 +33,6 @@
         else{
             echo "Veuillez remplir les champs du formulaire";
         }
-
     ?>
 </body>
 </html>
