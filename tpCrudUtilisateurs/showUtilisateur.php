@@ -4,37 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afficher Produit</title>
+    <title>Afficher Utilisateur</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3>Liste des produits</h3>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="addUtilisateur.php">Ajouter Utilisateur</a></li>
+                <li><a href="showUtilisateur.php">Afficher Utilisateurs</a></li>
+                <li><a href="updateUtilisateur.php">Modifier Utilisateur</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>Liste des utilisateurs</h2>
     <form action="" method="post">
-    <?php 
-        // Pour inclure le fichier de connexion à la bdd 
+    <?php
+        // inclure le fichier de connexion à la dbb
         include "connexionBDD.php";
-        // Pour inclure le fichiers fonctions
+        // inclure le fichier des requêtes
         include "fonctions.php";
-        showAllPoduit($bdd);
+        showAllUtilisateur($bdd);
     ?>
         <input type="submit" value="Supprimer">
     </form>
-    <?php
+
+    <?php 
         if(isset($_GET['error'])){
             echo "<p>Veuillez selectionner un produit à modifier</p>";
         }
         //vérification de la super globale $_POST['id_prod']
-        if(isset($_POST['id_prod'])){
+        if(isset($_POST['idUtil'])){
             //boucle pour parcourir chaque case cochés ($value équivaut à value en HTML)
-            foreach($_POST['id_prod'] as $id){
+            foreach($_POST['idUtil'] as $id){
                 deleteUtilisateur($bdd, $id);
-                echo "<p>Suppression de l'article $id</p>";
+                echo "<p>Suppression de l'utilisateur $id</p>";
                 // Script JS pour redirection vers showProduit.php dans 1500 ms 
-                echo '<script>
+                echo '
+                <script>
                     setTimeout(()=>{
-                    document.location.href="showProduit.php"; 
-                    }, 1500);</script>';
-                // version PHP
-                // header('Location : showProduit.php');
+                        document.location.href="showUtilisateur.php"; 
+                    }, 1500);
+                </script>';
             }
         }
         else{
@@ -43,4 +54,5 @@
     ?>
 </body>
 </html>
+
 
