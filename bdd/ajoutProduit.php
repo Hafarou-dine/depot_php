@@ -19,7 +19,7 @@
     <?php
         // Pour inclure le fichier de connexion à la bdd 
         include "connexionBDD.php";
-        // Pour inclure le ficiers fonctions
+        // Pour inclure le fichiers fonctions
         include "fonctions.php";
         if(isset($_POST['nom_produit']) && isset($_POST['contenu_produit']) && ($_POST['nom_produit'] != "") && ($_POST['contenu_produit'] != "")){
             $nom = $_POST['nom_produit'];
