@@ -1,15 +1,15 @@
 <?php
     // requête d'ajout d'un utilisateur
-    function insertUtilisateur($bdd, $nom, $prenom, $mail, $mdp){
-        try{
-            // je ne mais rien pour le champ de l'image il a la valeur null par defaut 
-            $req = $bdd->prepare('INSERT INTO utilisateur(nom_util, prenom_util, mail_util, mdp_util) 
-            VALUES(:nom_util, :prenom_util, :mail_util, :mdp_util)');
+    function insertUtilisateur($bdd, $nom, $prenom, $mail, $mdp, $img){
+        try{ 
+            $req = $bdd->prepare('INSERT INTO utilisateur(nom_util, prenom_util, mail_util, mdp_util, img_util) 
+            VALUES(:nom_util, :prenom_util, :mail_util, :mdp_util, :img_util)');
             $req->execute(array(
                 'nom_util' => $nom,
                 'prenom_util' => $prenom,
                 'mail_util' => $mail,
-                'mdp_util' => $mdp
+                'mdp_util' => $mdp,
+                'img_util' => $img
             ));
         }
         catch(Exception $e){
@@ -41,7 +41,8 @@
     //requête qui supprime un utilisateur
     function deleteUtilisateur($bdd, $id){
         try{
-            $req = $bdd->prepare('DELETE FROM utilisateur WHERE id_util = :id_util');
+            $req = $bdd->prepare('DELETE FROM utilisateur 
+            WHERE id_util = :id_util');
             $req->execute(array(
                 'id_util' => $id
             ));
@@ -77,6 +78,7 @@
 
 
     // requête de verification des mails
+    // renvoie true(vrai) si le mail est trouvé parmis ceux en BDD et false(faux) sinon
     function mailTrouver($bdd, $mail){
         try{
             $req = $bdd->prepare('SELECT mail_util FROM utilisateur');
@@ -95,14 +97,15 @@
 
 
     // requête de pre-remplissage des champs du fomulaire de modification 
-    function remplirChamps($bdd, $id, $champNom, $ChampPrenom, $champMail, $champMdp){
+    // renvoie la liste des champs de l'utilisateur selectionner
+    function preRemplirChamps($bdd, $id){
         try{
             $req = $bdd->prepare('SELECT * FROM utilisateur
             WHERE id_util = :id_util');
             $req->execute(array(
                 'id_util' => $id
             ));
-
+            return $req->fetch();
         }
         catch(Exception $e){
             die('Erreur : '.$e->getMessage());

@@ -21,16 +21,22 @@ a{
     color: black;
 }
 
-input[type="text"]{
+input{
+    font-size: 14px;
+}
+
+input[type="text"], input[type="password"]{
     width: 400px;
-    padding: 5px;
+    padding: 6px;
     border-radius: 4px;
     border: 1px solid black;
 }
 
+
+
 input[type="submit"]{
     width: 100px;
-    padding: 5px;
+    padding: 6px;
     border-radius: 4px;
     border: 1px solid black;
 }

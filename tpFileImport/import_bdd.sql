@@ -1,0 +1,16 @@
+CREATE DATABASE images;
+USE images;
+
+CREATE TABLE image(
+	id_img INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nom_img VARCHAR(50),
+    url_img VARCHAR(50)
+);
+
+CREATE TABLE nbr(
+	id_nbr INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    cpt_nbr INT
+);
+
+INSERT INTO nbr(cpt_nbr) VALUES(1);
+

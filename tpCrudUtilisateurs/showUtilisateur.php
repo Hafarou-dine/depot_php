@@ -9,13 +9,11 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="addUtilisateur.php">Ajouter Utilisateur</a></li>
-                <li><a href="showUtilisateur.php">Afficher Utilisateurs</a></li>
-                <li><a href="updateUtilisateur.php">Modifier Utilisateur</a></li>
-            </ul>
-        </nav>
+        <ul>
+            <li><a href="addUtilisateur.php">Ajouter Utilisateur</a></li>
+            <li><a href="showUtilisateur.php">Afficher Utilisateurs</a></li>
+            <li><a href="updateUtilisateur.php">Modifier Utilisateur</a></li>
+        </ul>
     </header>
     <h2>Liste des utilisateurs</h2>
     <form action="" method="post">
@@ -31,7 +29,7 @@
 
     <?php 
         if(isset($_GET['error'])){
-            echo "<p>Veuillez selectionner un produit à modifier</p>";
+            echo "<p>Veuillez selectionner (cliquer sur) un utilisateur à modifier</p>";
         }
         //vérification de la super globale $_POST['id_prod']
         if(isset($_POST['idUtil'])){
@@ -39,7 +37,7 @@
             foreach($_POST['idUtil'] as $id){
                 deleteUtilisateur($bdd, $id);
                 echo "<p>Suppression de l'utilisateur $id</p>";
-                // Script JS pour redirection vers showProduit.php dans 1500 ms 
+                // Script JS pour redirection vers showUtilisateur.php dans 1500 ms 
                 echo '
                 <script>
                     setTimeout(()=>{
@@ -49,10 +47,9 @@
             }
         }
         else{
-            echo "<p>Veuillez cocher un ou plusieurs produit à supprimer</p>";
+            echo "<p>Veuillez cocher un ou plusieurs utilisateurs à supprimer</p>";
         }
     ?>
 </body>
 </html>
-
 
