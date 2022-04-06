@@ -25,7 +25,7 @@
         $data = getCounter($bdd);
         $cpt = $data['cpt_nbr'];
         $id = $data['id_nbr'];
-        if(isset($_FILES['file'])){
+        if(isset($_FILES['file']) && $_FILES['file']['name'] != ''){
             $tmpName = $_FILES['file']['tmp_name'];
             $name = $_FILES['file']['name'];
             $size = $_FILES['file']['size'];
@@ -35,16 +35,19 @@
             $nameFile = "image$cpt.$ext";
             $url = "./image/$nameFile";
             move_uploaded_file($tmpName, $url);
-            insertImage($bdd, $nameFile, $url);
             $cpt++;
             updateCounter($bdd, $id, $cpt);
-            echo "<p>Le fichier $nameFile a été ajouté en BDD</p>";
+            insertImage($bdd, $nameFile, $url);
+            echo "<p>Le fichier $nameFile a été ajoutée en BDD</p>";
             echo '
             <script>
                 setTimeout(()=>{
                     document.location.href="index.php"; 
                 }, 3000);
             </script>';
+        }
+        else{
+            echo "<p>Veuillez selectionner un fichier</p>";
         }
     ?>
 </body>
