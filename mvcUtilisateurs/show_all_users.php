@@ -34,9 +34,9 @@
                 $prenom = $userData['prenom_util'];
                 deleteUser($bdd, $id);
                 echo "<p>Suppression de l'utilisateur $nom $prenom</p>";
-                // redirection vers la page "./show_all_users.php" dans 3000 ms 
-                redirection("./show_all_users.php", "3000");
             }
+            // redirection vers la page "./show_all_users.php" dans 3000 ms 
+            redirection("./show_all_users.php", "3000");
         }
         else{
             echo "<p>Veuillez cocher un ou plusieurs utilisateurs à supprimer</p>";
