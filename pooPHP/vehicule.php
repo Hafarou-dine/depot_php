@@ -20,7 +20,7 @@
             return $this->nom;
         }
 
-        public function setNom($new):void{
+        public function setNom(string $new):void{
             $this->nom = $new;
         }
 
@@ -28,7 +28,7 @@
             return $this->nbRoues;
         }
 
-        public function setNbRoues($new):void{
+        public function setNbRoues(int $new):void{
             $this->nbRoues = $new;
         }
 
@@ -36,7 +36,7 @@
             return $this->vitesse;
         }
 
-        public function setVitesse($new):void{
+        public function setVitesse(int $new):void{
             $this->vitesse = $new;
         }
 
@@ -53,7 +53,7 @@
             return $res;
         }
 
-        public function boost($boost):void{
+        public function boost(int $boost):void{
             $this->vitesse += $boost;
         }
 
@@ -68,7 +68,7 @@
                 return '<p>Le vehicule le plus rapide est '.$vehicule->nom.'</p>';
             }
         }
-        
+
     }
 ?>
 
