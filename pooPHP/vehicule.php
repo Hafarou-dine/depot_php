@@ -7,7 +7,7 @@
 
         
         /* ------------------------------ Constructeur ------------------------------ */
-        // Toujours en public
+        // Toujours en public sinon on ne pourra pas instancier de nouvel objet
         public function __construct($name, $nbr, $vit){
             $this->nom = $name;
             $this->nbRoues = $nbr;
@@ -16,6 +16,7 @@
     
 
         /* ------------------------------ Methodes ------------------------------ */
+        /* -------------------- getters & setter -------------------- */
         public function getNom():string{
             return $this->nom;
         }
@@ -40,11 +41,13 @@
             $this->vitesse = $new;
         }
 
+        
+         /* -------------------- Autres methodes -------------------- */
         public function detect():string{
-            if($this->nbRoues == 4){
+            if($this->getNbRoues() == 4){
                 $res = "voiture";
             }
-            else if($this->nbRoues == 2){ 
+            else if($this->getNbRoues() == 2){ 
                 $res = "moto";
             }
             else{
@@ -54,14 +57,14 @@
         }
 
         public function boost(int $boost):void{
-            $this->vitesse += $boost;
+            $this->setVitesse($this->getVitesse() + $boost);
         }
 
         public function plusRapide($vehicule):string{
-            if($this->vitesse > $vehicule->vitesse){
-                return '<p>Le vehicule le plus rapide est '.$this->nom.'</p>';
+            if($this->getVitesse() > $vehicule->getVitesse()){
+                return '<p>Le vehicule le plus rapide est '.$this->getNom().'</p>';
             }
-            else if($this->vitesse == $vehicule->vitesse){
+            else if($this->getVitesse() == $vehicule->getVitesse()){
                 return '<p>Les deux vehicules ont une vitesse égale</p>';
             }
             else{
