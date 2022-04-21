@@ -68,6 +68,7 @@
                 return '<p>Le vehicule le plus rapide est '.$vehicule->nom.'</p>';
             }
         }
+        
     }
 ?>
 
